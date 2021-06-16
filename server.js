@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
 
-app.use(cors({origin: 'http://86.184.101.251:7777'}));
+const ip = "86.184.101.251:7777"
+
+app.use(cors({origin: 'http://' + ip}));
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
