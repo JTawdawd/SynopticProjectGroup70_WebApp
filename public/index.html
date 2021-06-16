@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Index</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+	<div class="outer">
+		<div class="middle">
+			<form id="formSelector">
+				<h2>Enter your Auth Key!</h2>
+			
+				<label for="authKey"> Auth Key:</label><br>
+				<input class="inputElement inputFormSelector" type="text" id="authKey" name="authKey"><br><br>
+				<h5 id="replyFormSelector"></h5>
+				
+				<button type="button" onclick="CheckAuthKey()" class="confirmButton">Confirm</button>
+				<button type="button" onclick="ShowApplicationForm()" class="confirmButton">Apply</button>
+			</form>			
+			
+			<form id="applicationForm">
+			
+				<h2>Apply for an Auth Key!</h2>
+			
+				<label for="authKey"> First Name: </label><br>
+				<input class="inputElement inputApplicationForm" type="text" id="applicationForm_firstName" name="authKey"><br><br>
+				<label for="authKey"> Last Name:  </label><br>
+				<input class="inputElement inputApplicationForm" type="text" id="applicationForm_secondName" name="authKey"><br><br>
+				<label for="authKey"> Occupation:</label><br>
+				<input class="inputElement inputApplicationForm" type="text" id="applicationForm_occupation" name="authKey"><br><br>
+				
+				<h5 id="replyApplicationForm"></h5>
+				
+				<button type="button" onclick="SubmitApplication()" class="confirmButton">Confirm</button>
+				<button type="button" onclick="Back()" class="confirmButton">Back</button>
+				
+			</form>
+			
+			<form id="dataForm">
+			
+				<h2>Submit content for the app!</h2>
+			
+				<label for="authKey"> Title:</label><br>
+				<input class="inputElement inputDataForm" type="text" id="dataForm_title" name="authKey"><br><br>
+				<label for="authKey"> Description:</label><br>
+				<textarea class="inputElement inputDataForm" type="text" id="dataForm_description" name="authKey"></textarea><br><br>
+				<label for="authKey"> Author:</label><br>
+				<input class="inputElement inputDataForm" type="text" id="dataForm_author" name="authKey"><br><br>
+				
+				<h5 id="replyDataForm"></h5>
+				
+				<button type="button" onclick="SubmitData()" class="confirmButton">Confirm</button>
+				<button type="button" onclick="Back()" class="confirmButton">Back</button>
+			</form>
+			
+			<div id="moderatorPage">
+				<h2>Applications</h2>
+				
+				<h5 id="replyModerationPage"></h5>
+				
+			<div>
+		</div>
+	</div>
+	
+	<script src="script.js"></script>
+</body>
+</html>

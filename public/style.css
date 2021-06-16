@@ -1,0 +1,158 @@
+#applicationForm {
+	display: none;
+}
+#dataForm {
+	display: none;
+}
+
+
+h5, h2, h3, label {
+	color: white;
+	font-family: Trebuchet MS;
+}
+
+/*vertical centtering*/
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #112942;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+form {
+	display: block;
+	margin: auto;
+	vertical-align: center;
+	width: 30%;
+	border: 1px dashed white;
+	/*background-color: lightblue;*/
+	padding: 20px;
+	text-align: center;
+}
+
+form label { 
+	text-align: left;
+	font-family: Trebuchet MS;
+	font-size: 17px;
+}
+
+form input {
+	border-radius: 5px;
+	border-color: lightgrey;
+	padding: 5px 5px;
+	width: 80%;
+}
+form textarea {
+	border-radius: 5px;
+	border-color: lightgrey;
+	padding: 5px 5px;
+	width: 80%;
+	height: 200px;
+}
+form h5 {
+	display: none;
+	margin: 0 0 10px 0;
+	color: red;
+	font-family: Trebuchet MS;
+	font-size: 15px;
+}
+form h2 {
+	margin: 0 0 10px 0;
+	font-family: Trebuchet MS;
+	font-size: 21px;
+}
+
+form button {
+	
+}
+button {
+	transition-duration: 0.4s;
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	margin: 0 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+button:hover {
+	background-color: white; /* Green */
+	color: #112942;
+}
+#moderatorPage {
+	display: none;
+	margin: auto;
+	vertical-align: center;
+	width: 50%;
+	border: 1px dashed white;
+	padding: 10px;
+	text-align: center;
+	
+}
+#moderatorPage h2 {
+	margin: 0 0 10px 0;
+	font-family: Trebuchet MS;
+	font-size: 21px;
+}
+#moderatorPage h5 {
+	margin: 0 0 10px 0;
+	color: red;
+	font-family: Trebuchet MS;
+	font-size: 15px;
+}
+#moderatorPage button {
+margin: 0;	
+}
+
+.application {
+	display: flex;
+	justify-content: center;
+	margin: 50px;
+}
+.application h3 {
+	padding: 0 20px;
+	min-width: 70%;
+}
+@media (max-width: 370px) {
+	#moderatorPage {
+		min-width:100%;
+	}
+}
+@media (max-width: 700px) {
+	form {
+		min-width: 70%;
+	}
+	.application h3 {
+		padding: 0;
+	}
+	#moderatorPage {
+		min-width:90%;
+	}
+	
+}
+@media (max-width: 900px) {
+	form {
+		width: 50%;
+	}
+	.application h3 {
+		padding: 0 5px;
+		min-width: 70%;
+	}
+	
+}
+@media (max-width: 1300px) {
+	#moderatorPage {
+		width: 70%;
+	}
+}
