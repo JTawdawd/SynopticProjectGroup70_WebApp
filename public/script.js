@@ -4,6 +4,7 @@ var backButton = document.createElement("button");
 backButton.innerHTML = "back";
 backButton.addEventListener("click", Back);
 
+const ip = "86.184.101.251:7777";
 
 function ClearApplications() {
 	console.log("cleared!?")
@@ -29,7 +30,7 @@ function BuildApplications() {
 			applications=JSON.parse(xmlhttp.response);
 		}
 	}
-	xmlhttp.open("GET","http://86.184.101.251:7777/applications", false);
+	xmlhttp.open("GET","http://" + ip + "/applications", true);
 	xmlhttp.send();
 	
 	if (applications.length === 0) {
@@ -68,7 +69,7 @@ function ApproveApplication() {
 		var nameOcc = applications[i].name + ", " + applications[i].occupation;
 		if (nameOcc == this.parentElement.childNodes[1].innerHTML) {
 			xmlhttp = new XMLHttpRequest();
-			xmlhttp.open("POST","http://86.184.101.251:7777/updateAuthKeys", true);
+			xmlhttp.open("POST","http://" + ip + "/updateAuthKeys", true);
 			xmlhttp.setRequestHeader("Content-Type", "application/json");
 			xmlhttp.send(JSON.stringify(applications[i]));
 			
@@ -94,7 +95,7 @@ function DeclineApplication() {
 
 function RemoveApplication(application) {
 	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("POST","http://86.184.101.251:7777/updateApplications", true);
+	xmlhttp.open("POST","http://" + ip + "/updateApplications", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json");
 	xmlhttp.send(JSON.stringify(application));
 }
@@ -122,7 +123,7 @@ function CheckAuthKey() {
 			}
          }
 	}
-	xmlhttp.open("GET","http://86.184.101.251:7777/authKeys", true);
+	xmlhttp.open("GET","http://" + ip + "/authKeys", true);
 	xmlhttp.send();
 }
 
@@ -170,7 +171,7 @@ function SubmitApplication() {
 	var dataJSON = JSON.parse(data);
 	
 	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("POST","http://86.184.101.251:7777/submitApplication", true);
+	xmlhttp.open("POST","http://" + ip + "/submitApplication", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json");
 	xmlhttp.send(JSON.stringify(dataJSON));
 	
@@ -203,7 +204,7 @@ function SubmitData() {
 	var dataJSON = JSON.parse(data);
 	
 	xmlhttp = new XMLHttpRequest();
-	xmlhttp.open("POST","http://86.184.101.251:7777/submitData", true);
+	xmlhttp.open("POST","http://" + ip + "/submitData", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/json");
 	xmlhttp.send(JSON.stringify(dataJSON));
 	
