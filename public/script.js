@@ -4,7 +4,7 @@ var backButton = document.createElement("button");
 backButton.innerHTML = "back";
 backButton.addEventListener("click", Back);
 
-const ip = "86.184.101.251:7777";
+const ip = "localhost:3000";
 
 /* removes all applictions on moderator page */
 function ClearApplications() {
