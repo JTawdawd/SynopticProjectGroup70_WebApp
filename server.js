@@ -6,7 +6,7 @@ const cors = require('cors');
 const fs = require("fs");
 
 /* origin ip of the server */
-const ip = "86.184.101.251:7777"
+const ip = "localhost:3000"
 
 /* set up express */
 app.use(cors({origin: 'http://' + ip}));
