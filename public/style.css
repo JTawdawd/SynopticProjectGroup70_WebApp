@@ -1,3 +1,4 @@
+/* js specific styling */
 #applicationForm {
 	display: none;
 }
@@ -5,7 +6,7 @@
 	display: none;
 }
 
-
+/* general theme styling */
 h5, h2, h3, label {
 	color: white;
 	font-family: Trebuchet MS;
@@ -21,12 +22,12 @@ h5, h2, h3, label {
   width: 100%;
   background-color: #112942;
 }
-
 .middle {
   display: table-cell;
   vertical-align: middle;
 }
 
+/* form content */
 form {
 	display: block;
 	margin: auto;
@@ -37,7 +38,6 @@ form {
 	padding: 20px;
 	text-align: center;
 }
-
 form label { 
 	text-align: left;
 	font-family: Trebuchet MS;
@@ -69,7 +69,6 @@ form h2 {
 	font-family: Trebuchet MS;
 	font-size: 21px;
 }
-
 form button {
 	
 }
@@ -85,11 +84,12 @@ button {
 	display: inline-block;
 	font-size: 16px;
 }
-
 button:hover {
 	background-color: white; /* Green */
 	color: #112942;
 }
+
+/* moderator page */
 #moderatorPage {
 	display: none;
 	margin: auto;
@@ -115,6 +115,7 @@ button:hover {
 margin: 0;	
 }
 
+/* js built applications pre-styling */
 .application {
 	display: flex;
 	justify-content: center;
@@ -124,6 +125,8 @@ margin: 0;
 	padding: 0 20px;
 	min-width: 70%;
 }
+
+/* resizing */
 @media (max-width: 370px) {
 	#moderatorPage {
 		min-width:100%;

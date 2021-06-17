@@ -4,8 +4,9 @@ var backButton = document.createElement("button");
 backButton.innerHTML = "back";
 backButton.addEventListener("click", Back);
 
-const ip = "localhost:3000";
+const ip = "86.184.101.251:7777";
 
+/* removes all applictions on moderator page */
 function ClearApplications() {
 	console.log("cleared!?")
 	var div = document.getElementById("moderatorPage");
@@ -21,6 +22,7 @@ function ClearApplications() {
 		div.removeChild(backButton);*/
 }
 
+/* create all applications on moderator page from appliction json (requested from server) */
 function BuildApplications() {
 	ClearApplications()	;
 	xmlhttp = new XMLHttpRequest();
@@ -64,6 +66,7 @@ function BuildApplications() {
 	//moderatorPageDiv.appendChild(backButton);
 }
 
+/* remove appliction from moderator page, remove application from application json, and add auth key to authorised status json */
 function ApproveApplication() {
 	for (var i = 0; i< applications.length; i++) {
 		var nameOcc = applications[i].name + ", " + applications[i].occupation;
@@ -82,6 +85,7 @@ function ApproveApplication() {
 	//BuildApplications();
 }
 
+/* remove appliction from moderator page, remove application from application json */
 function DeclineApplication() {
 	for (var i = 0; i< applications.length; i++) {
 		var nameOcc = applications[i].name + ", " + applications[i].occupation;
@@ -93,6 +97,7 @@ function DeclineApplication() {
 	//BuildApplications();
 }
 
+/* removes application from applications json */
 function RemoveApplication(application) {
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.open("POST","http://" + ip + "/updateApplications", true);
@@ -100,6 +105,7 @@ function RemoveApplication(application) {
 	xmlhttp.send(JSON.stringify(application));
 }
 
+/* Check if auth key is in authorised status json, if it is take them to content page, if it isnt reply to user */
 function CheckAuthKey() {
 	var authKey = document.getElementById("authKey").value;
 	var authKeys = [];
@@ -127,6 +133,7 @@ function CheckAuthKey() {
 	xmlhttp.send();
 }
 
+/* clear all input boxes */
 function ClearInputs() {
 	var inputs = document.getElementsByClassName("inputElement");
 	for (var i = 0; i < inputs.length; i++) {
@@ -134,6 +141,7 @@ function ClearInputs() {
 	}
 }
 
+/* show application form and hide all others */
 function ShowApplicationForm() {
 	document.getElementById("formSelector").style.display = "none";
 	document.getElementById("dataForm").style.display = "none";
@@ -141,6 +149,7 @@ function ShowApplicationForm() {
 	document.getElementById("moderatorPage").style.display = "none";
 }
 
+/* show data form and hide all others */
 function ShowDataForm() {
 	document.getElementById("formSelector").style.display = "none";
 	document.getElementById("applicationForm").style.display = "none";
@@ -148,6 +157,7 @@ function ShowDataForm() {
 	document.getElementById("moderatorPage").style.display = "none";
 }
 
+/* take values, make a json, and post it to the server (where it adds it to applications) & create a random auth key to include in the json*/
 function SubmitApplication() {
 	var inputs = document.getElementsByClassName("inputApplicationForm");
 	for (var i = 0; i < inputs.length; i++) {
@@ -182,6 +192,7 @@ function SubmitApplication() {
 	ClearInputs();
 }
 
+/* take values, make a json, and post it to the server (where it adds it to the test content json) */
 function SubmitData() {
 	var inputs = document.getElementsByClassName("inputDataForm");
 	for (var i = 0; i < inputs.length; i++) {
@@ -215,6 +226,7 @@ function SubmitData() {
 	ClearInputs();
 }
 
+/* show moderator page, and hide all forms */
 function ShowModeratorPage() {
 	BuildApplications();
 	document.getElementById("formSelector").style.display = "none";
@@ -223,6 +235,7 @@ function ShowModeratorPage() {
 	document.getElementById("moderatorPage").style.display = "block";
 }
 
+/* go back to auth key page */
 function Back() {
 	ClearInputs();
 	document.getElementById("formSelector").style.display = "block";
